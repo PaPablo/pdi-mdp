@@ -56,6 +56,10 @@ def threshold(im, thresh=.5, norm=False):
     s[s<= thresh] =0
     return s
 
+def dynamic_range_compression(im, c=1):
+    s = c*np.log(1+(im/255))
+    return np.clip(s,0,1)
+
 # Cálculo del histograma
 def image_histogram(im, bins=255):
     dx = 1 / bins
