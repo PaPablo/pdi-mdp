@@ -106,7 +106,7 @@ def laplace(im):
         [1,-4,1],
         [0,1,0]
     ])
-    return convolute_image(im, kernel, kernel_sum).clip(0,255)
+    return convolute_image(im, kernel, kernel_sum)
 
 def fft_image(im):
     unshift_fft = np.fft.fft2(im)
